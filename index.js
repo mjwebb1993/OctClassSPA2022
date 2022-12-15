@@ -19,12 +19,14 @@ function render(state = store.Home) {
   afterRender();
   router.updatePageLinks();
 }
+
 function afterRender() {
   // add menu toggle to bars icon in nav bar
   document.querySelector(".fa-bars").addEventListener("click", () => {
     document.querySelector("nav > ul").classList.toggle("hidden--mobile");
   });
 }
+
 router.hooks({
   before: (done, params) => {
     const view =
