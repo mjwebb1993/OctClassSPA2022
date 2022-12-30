@@ -17,27 +17,11 @@ db.once(
   console.log.bind(console, "Successfully opened connection to Mongo!")
 );
 
-// CORS Middleware
-const cors = (request, response, next) => {
-  response.setHeader(
-    "Access-Control-Allow-Headers",
-    "X-Requested-With,content-type, Accept,Authorization,Origin"
-  );
-  response.setHeader("Access-Control-Allow-Origin", "*");
-  response.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET, POST, OPTIONS, PUT, PATCH, DELETE"
-  );
-  response.setHeader("Access-Control-Allow-Credentials", true);
-  next();
-};
-
 const logging = (request, response, next) => {
   console.log(`${request.method} ${request.url} ${Date.now()}`);
   next();
 };
 
-app.use(cors);
 app.use(express.json());
 app.use(logging);
 
@@ -49,31 +33,6 @@ app.get("/status", (request, response) => {
 app.get("/echo/:input", (request, response) => {
   const message = request.params.input;
   response.status(418).json({ echo: message });
-});
-
-app.get("/users/:id", (request, response) => {
-  // express adds a "params" Object to requests
-  const id = request.params.id;
-  // handle GET request for post with an id of "id"
-  response.send(JSON.stringify({ users_id: id }));
-});
-
-app.get("/weather/:city", (request, response) => {
-  // express adds a "params" Object to requests
-  const city = request.params.city;
-  // handle GET request for post with an id of "id"
-  response.send(
-    JSON.stringify({ current: `The weather in ${city} is 73 degrees today.` })
-  );
-});
-
-app.post("/add", (request, response) => {
-  const num1 = request.body.numberOne;
-  const num2 = request.body.numberTwo;
-  const responseBody = {
-    sum: num1 + num2
-  };
-  response.json(responseBody);
 });
 
 app.use("/pizzas", pizzas);
