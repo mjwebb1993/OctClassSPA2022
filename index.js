@@ -22,7 +22,9 @@ function afterRender(state) {
   document.querySelector(".fa-bars").addEventListener("click", () => {
     document.querySelector("nav > ul").classList.toggle("hidden--mobile");
   });
-
+  document.querySelector(".expRate").addEventListener("click", event => {
+    console.log(event.target.attributes);
+  });
   if (state.view === "Order") {
     document.querySelector("form").addEventListener("submit", event => {
       event.preventDefault();
