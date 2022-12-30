@@ -14,6 +14,60 @@ export default () => html`
           <option value="hella-thick">Hella Thick</option>
         </select>
       </div>
+      <h3>UMSL</h3>
+      <div>
+        <label for="experience">Experience:</label>
+        <select id="experience" name="experience">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <div>
+        <label for="environment">Environment:</label>
+        <select id="environment" name="environment">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <input type="button" value="Rate" class="expRate" />
+      </div>
+      <h3>SLU</h3>
+      <div>
+        <label for="experience">Experience:</label>
+        <select id="experience" name="experience">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <div>
+        <label for="environment">Environment:</label>
+        <select id="environment" name="environment">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <input type="button" value="Rate" class="expRate" />
+      </div>
+      <div>
+        <label for="crust">Crust:</label>
+        <select id="crust" name="crust">
+          <option value="">Select a Crust</option>
+          <option value="thin">Thin</option>
+          <option value="chicago">Chicago</option>
+          <option value="deep-dish">Deep Dish</option>
+          <option value="hella-thick">Hella Thick</option>
+        </select>
+      </div>
       <div>
         <label for="cheese">Cheese:</label>
         <input
@@ -81,7 +135,7 @@ export default () => html`
         type="hidden"
         name="customer"
         id="customer"
-        value="Anonymous Customer"
+        value="Oct 2022 Class SPA"
       />
       <input type="submit" name="submit" value="Submit Pizza" />
     </form>
